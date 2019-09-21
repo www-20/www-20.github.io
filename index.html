@@ -277,6 +277,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www-20.github.io/2019/09/21/quicksort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wz">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life is Good">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/21/quicksort/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-21 14:45:47 / Modified: 14:50:30" itemprop="dateCreated datePublished" datetime="2019-09-21T14:45:47+08:00">2019-09-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="title-快速排序"><a href="#title-快速排序" class="headerlink" title="title:快速排序"></a>title:快速排序</h2><p>##快速排序<br>     通过一趟排序算法把所需要排序的序列的元素分割成两大块，其中，一部分的元素都要小于或等于另外一部分的序列元素，然后仍根据该种方法对划分后的这两块序列的元素分别再次实行快速排序算法，排序实现的整个过程可以是递归的来进行调用，最终能够实现将所需排序的无序序列元素变为一个有序的序列。</p>
+<p>##源码<br>    public class kuaipai {<br>    public static void main(String[] args) {<br>        int[] arr = {1, 9, 5, 2, 8, 7, 4, -10, 0, -3, 6, -20};<br>        sort(arr, 0, arr.length - 1);<br>        System.out.println(Arrays.toString(arr));<br>    }</p>
+<pre><code>public static void sort(int[] arr, int low, int high) {
+    if (low &gt;= high) {
+        return;
+    }
+
+    int i = low;
+    int j = high;
+
+    int key = arr[i];
+
+    while (i &lt; j) {
+        while (arr[j] &gt;= key &amp;&amp; i &lt; j) {
+            j--;
+        }
+
+        if (i &lt; j) {
+            int t;
+            t = arr[j];
+            arr[j] = arr[i];
+            arr[i] = t;
+        }
+
+        while (arr[i] &lt;= key &amp;&amp; i &lt; j) {
+            i++;
+        }
+
+        if (i &lt; j) {
+            int t;
+            t = arr[i];
+            arr[i] = arr[j];
+            arr[j] = t;
+        }
+
+        sort(arr, low, i - 1);
+        sort(arr, low + 1, high);
+    }
+}</code></pre><p>}</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www-20.github.io/2019/08/21/create blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -615,7 +794,7 @@ hexo d
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
